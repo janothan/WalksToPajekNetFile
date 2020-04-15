@@ -6,10 +6,16 @@ import java.util.zip.GZIPInputStream;
 public class Main {
 
     public static void main(String[] args) {
-        String walkDirectoryOrFile = "";
-        String fileToWrite = "";
+        String walkDirectoryOrFile = "/Users/janportisch/Documents/PhD/ISWC_2020/WalksLight/RandomMidWalks/DocumentSimilarityLP50/walk_file.gz";
+        String fileToWrite = "/Users/janportisch/Documents/PhD/ISWC_2020/WalksLight/RandomMidWalks/DocumentSimilarityLP50/LP50_graph.net";
+
+        writeGraphFile(walkDirectoryOrFile, fileToWrite);
+        System.out.println("Done");
     }
 
+    //---------------------------------------------------------------------------
+    // You do not need to set anything below this point.
+    //---------------------------------------------------------------------------
 
     /**
      * Map from URI to identifier.
@@ -31,7 +37,10 @@ public class Main {
 
     public static void writeGraphFile(String walkDirectoryOrFile, String fileToWrite) {
         File walkFile = new File(walkDirectoryOrFile);
-        if (walkFile.exists() == false) System.out.println("ERROR: The specified file does not exist.");
+        if (walkFile.exists() == false) {
+            System.out.println("ERROR: The specified file does not exist.");
+            return;
+        }
 
         if (walkFile.isDirectory()) {
             for (File file : walkFile.listFiles()) {
