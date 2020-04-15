@@ -81,3 +81,8 @@ nb-configuration.xml
 ## OS X
 ##############################
 .DS_Store
+
+##############################
+## Project Specific
+##############################
+test_graph.net
