@@ -10,7 +10,7 @@ import java.util.zip.GZIPInputStream;
 public class Main {
 
     public static void main(String[] args) {
-        if(args == null || args.length > 2){
+        if(args == null){
             System.out.println("Invalid arguments.\n\n\n" + getHelp());
             return;
         }
